@@ -2,7 +2,7 @@
 {
   "name": "Font selector",
   "description": "change font color and type from within browser ",
-  "version": "2.0",
+  "version": "1.0",
   "permissions": [
     "activeTab"
   ],
@@ -10,6 +10,13 @@
     "scripts": ["background.js"],
     "persistent": true
   },
+  "content_scripts": [
+   {
+    "run_at": "document_end",
+     "matches": ["http://*/*"],
+     "js": ["content.js"]
+   }
+ ],
   "browser_action": {
     "default_title": "change this font"
   },
