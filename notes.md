@@ -25,4 +25,5 @@
 
  Issues day 2
  1) cannot load all of the fonts 
+ add example of what font looks like next to it? or change the text of it to that font
 
