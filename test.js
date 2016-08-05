@@ -1,26 +1,43 @@
-// $(document).ready(() => {
-
-
-
-  // document.onclick = myClickHandler;
-  //   function myClickHandler() {
-  //     var jq = document.createElement('script');
-  //     jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
-  //    var clicked = event.target
-  //    $(clicked).append($(clicked).css('font-family'))
-  //   }
-
-// $('.clear-articles h3').css('font-family', billy_font)
-// $('.artist-name h3').css('font-size', '100px')
-
-var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('body')[0].appendChild(script);
-
-$('body').append('<form onsubmit="changeColor()"><input id="font" type="text"><button type="submit"> </button> </form>')
-
-function changeColor() { 
+$(document).click(function(event) {
   event.preventDefault();
-  var font = $('#font').val()
-  // $('#color').on('click', function(){
-     $('h1').css('font-family', font)
-  // })
+  renderList()
+})
+
+
+function renderList() {
+  if ($('#__extension__').length !== 1) {    
+    var div = document.createElement("div");
+    div.setAttribute('id', '__extension__')
+    document.body.appendChild(div)
+    getAllFonts()
+    // var script = React.createElement('script', {id: "__extension__"})
+    // document.body[0].appendChild(script)
+    // ReactDOM.render(script, document.getElementsByTagName('body'))
+    // $('body').append('<script id="__extension__" </script>')
+    // $('body').append('<form id="_formo_" onclick="getFont()"><input id="font" type="text"><button type="submit"> </button> </form>')    
+  }
 }
+
+
+function getAllFonts(){
+  $.ajax({
+    method: "GET",
+    url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCtnKRCf_cI3iQ7WZrU19_GmDeFDmoohCw",
+  }).done(function(fonts) {
+    fonts_arr = []
+    fonts.items.forEach((font)=> {
+        fonts_arr.push({category: font.category, family: font.family})
+    })
+    addFontsToList(fonts_arr)
+  })
+}
+
+function addFontsToList(arr) {
+  var select_list = React.createElement('select', {id: 'setFont'})
+  ReactDOM.render(select_list, document.getElementById('__extension__'))
+}
+
+// function getFont() {
+//   var font = $('#font').val()
+//   $('h1').css('font-family', font)
+// }

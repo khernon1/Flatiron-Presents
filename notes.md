@@ -1,6 +1,23 @@
 <!-- var hoverElem = null;
  $('*').hover(function() {hoverElem = this});
  -->
+// $(document).ready(() => {
+
+
+
+  // document.onclick = myClickHandler;
+  //   function myClickHandler() {
+  //     var jq = document.createElement('script');
+  //     jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
+  //    var clicked = event.target
+  //    $(clicked).append($(clicked).css('font-family'))
+  //   }
+
+// $('.clear-articles h3').css('font-family', billy_font)
+// $('.artist-name h3').css('font-size', '100px')
+
+// var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('body')[0].appendChild(script);
+
 
  Issues
  1) jquery not recognized even though it is being added to the html. it works in the console.
