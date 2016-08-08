@@ -19,6 +19,11 @@
 // var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('body')[0].appendChild(script);
 
 
- Issues
+ Issues day 1
  1) jquery not recognized even though it is being added to the html. it works in the console.
  2) function was not running on submit when the form was added
+
+ Issues day 2
+ 1) cannot load all of the fonts 
+ add example of what font looks like next to it? or change the text of it to that font
+
