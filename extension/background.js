@@ -5,14 +5,21 @@
 // Called when the user clicks on the browser action (icon)
 chrome.browserAction.onClicked.addListener(function(tab) {
   // No tabs or host permissions needed!
-  // alert("HELLO")
-
   chrome.tabs.executeScript({
-    code: 'content.js'
-  });
-    // var script = document.createElement('script');
-    // script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";
-    // document.getElementsByTagName('body')[0].appendChild(script);
+  file: 'content.js'
+})
+});
+
+
+
+
+  // chrome.tabs.executeScript({
+  //   code: "content.js"
+  // });
+
+
+
+
 
 
 
@@ -35,6 +42,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   // chrome.tabs.executeScript({
   //   code: 'document.body.style.backgroundColor="blue"'
   // });
-});
+
 
 // chrome.browserAction.setIcon({path:"icon-notification.png"});

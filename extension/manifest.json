@@ -3,22 +3,23 @@
   "name": "Font selector",
   "description": "change font color and type from within browser ",
   "version": "1.0",
-  "permissions": [
-    "activeTab"
-  ],
   "background": {
     "scripts": ["background.js"],
     "persistent": true
   },
   "content_scripts": [
    {
-    "run_at": "document_end",
      "matches": ["http://*/*"],
-     "js": ["content.js"]
+     "js": ["jquery-2.2.0.min.js", "content.js"]
    }
  ],
   "browser_action": {
     "default_title": "change this font"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "permissions": [
+  "activeTab",
+  "tabs",
+  "http://*/*"
+]
 }
