@@ -1,4 +1,10 @@
-$(document).click(function(event) {
+  // var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('body')[0].appendChild(script);
+  // var script = document.createElement('script');script.src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.js";document.getElementsByTagName('body')[0].appendChild(script);
+  // var script = document.createElement('script');script.src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.js";document.getElementsByTagName('body')[0].appendChild(script);
+  // var script = document.createElement('script');script.src = "https://cdnjs.cloudflare.com/ajax/libs/react/15.3.0/react-dom-server.js";document.getElementsByTagName('body')[0].appendChild(script);
+  // var script = document.createElement('script');script.src = "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js";document.getElementsByTagName('body')[0].appendChild(script);
+
+$(document).click(function(event) {  
   event.preventDefault();
   var clicked = event.target
   createFoo()
@@ -33,13 +39,26 @@ $(document).click(function(event) {
     fonts_arr = fonts_arr.slice(0,175)
     var fonts_list = fonts_arr.map((font) => {
       root += font.family + "|"
-      return React.createElement('option', {value: font.family}, font.family)
+      var option = document.createElement('option')
+      option.value = font.family
+      option.text = font.family
+      return option
+      // return React.createElement('option', {value: font.family}, font.family)
     }) 
-  // /append to body with react?
+  
+  
     var fonts_link = document.createElement('link');fonts_link.rel='stylesheet';fonts_link.type='text/css';fonts_link.href= root;document.getElementsByTagName('body')[0].appendChild(fonts_link);   
+    var select = document.createElement('select');select.id="__extension__";
+
+    document.getElementById('foo').appendChild(select)
     
-    var select = React.createElement('select', {id: '__extension__'}, fonts_list)    
-    ReactDOM.render(select, document.getElementById('foo'))
+     for (var i = 0; i < fonts_list.length; i++) {
+      document.getElementById('__extension__').appendChild(fonts_list[i])
+     }
+      
+
+    // var select = React.createElement('select', {id: '__extension__'}, fonts_list)    
+    // ReactDOM.render(select, document.getElementById('foo'))
     document.getElementById("__extension__").addEventListener('change', changeFont)
   }
 

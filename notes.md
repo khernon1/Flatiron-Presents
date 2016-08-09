@@ -16,7 +16,7 @@
 // $('.clear-articles h3').css('font-family', billy_font)
 // $('.artist-name h3').css('font-size', '100px')
 
-// var script = document.createElement('script');script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName('body')[0].appendChild(script);
+//  
 
 
  Issues day 1
@@ -27,3 +27,10 @@
  1) cannot load all of the fonts 
  add example of what font looks like next to it? or change the text of it to that font
 
+Slides outline
+- the files needed for chrome extension
+  - 1 on what a chrome extension is 
+    - examples of popular ones
+  - 1 on using developer tools
+  - 1 on what the manifest file does
+  - 1 on 
