@@ -16,7 +16,7 @@
 // $('.clear-articles h3').css('font-family', billy_font)
 // $('.artist-name h3').css('font-size', '100px')
 
-//  
+//  var script = document.createElement("script");script.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";document.getElementsByTagName("body")[0].appendChild(script);
 
 
  Issues day 1
@@ -34,3 +34,27 @@ Slides outline
   - 1 on using developer tools
   - 1 on what the manifest file does
   - 1 on 
+
+  next steps
+  easier using react
+  hover cabability
+
+  problems
+  no react
+  straight js
+
+  var hoverElem = null;
+ $('*').hover(function() {hoverElem = this});
+ 
+ // $(document).click(function(event) {  
+    //   var selection = event.target
+    //   console.log(selection)
+    // })
+    // // $('#__extension__ > option').on('mouseenter', function(event) {
+    // //   var hoverElem = null
+    // //   $('*').hover(function() {hoverElem = this});
+    // //   console.log(hoverElem)
+    // // })
+    // // $('#__extension__').on('mouseleave', function(event) {
+    // //   console.log('left')
+    // // })

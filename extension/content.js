@@ -1,7 +1,6 @@
 $(document).click(function(event) {  
   event.preventDefault();
   var clicked = event.target
-  // var element = clicked.tagName
   createFoo(clicked)
 
   function createFoo(clicked) {
@@ -9,7 +8,6 @@ $(document).click(function(event) {
       var foo = document.createElement("div");
       foo.setAttribute('id', 'foo')
       clicked.appendChild(foo)
-      // document.body.appendChild(foo)  
       getAllFonts()
     }
   }
@@ -31,20 +29,18 @@ $(document).click(function(event) {
 
   function renderList(fonts_arr) {
     root = "http://fonts.googleapis.com/css?family="
-    fonts_arr = fonts_arr.slice(0,175)
+    fonts_arr = fonts_arr.slice(0,100)
     var fonts_list = fonts_arr.map((font) => {
       root += font.family + "|"
       var option = document.createElement('option')
       option.value = font.family
-      option.text = font.family
+      option.innerHTML = font.family
+      $(option).css('font-family', font.family)
       return option
-      // return React.createElement('option', {value: font.family}, font.family)
     }) 
-  
   
     var fonts_link = document.createElement('link');fonts_link.rel='stylesheet';fonts_link.type='text/css';fonts_link.href= root;document.getElementsByTagName('body')[0].appendChild(fonts_link);   
     var select = document.createElement('select');select.id="__extension__";
-
 
     document.getElementById('foo').appendChild(select)
     
@@ -52,17 +48,11 @@ $(document).click(function(event) {
       document.getElementById('__extension__').appendChild(fonts_list[i])
      }
       
-
-    // var select = React.createElement('select', {id: '__extension__'}, fonts_list)    
-    // ReactDOM.render(select, document.getElementById('foo'))
     document.getElementById("__extension__").addEventListener('change', changeFont)
   }
 
   function changeFont() {
-    // $('select > option').hover(function() {
-        // $(clicked).css({fontFamily:$(this).val()}) 
     var font = $('#__extension__').val()
     $(clicked).css('font-family', font)
-  // })
   }
 })
