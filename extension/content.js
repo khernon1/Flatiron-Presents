@@ -12,7 +12,6 @@ $(document).click(function(event) {
     }
   }
 
-
   function getAllFonts(){
     $.ajax({
       method: "GET",
